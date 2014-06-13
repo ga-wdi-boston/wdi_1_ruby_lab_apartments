@@ -9,10 +9,16 @@
 # * has a credit rating, calculated from the average credit score using the logic below
 
 class Apartment
-  attr_accessor :number, :rent, :sqr_foot, :bedroom_count, :bathroom_count
+  attr_reader :number, :rent, :sqr_foot, :bedroom_count, :bathroom_count
 
-  def initialize (number:, rent:, sqr_foot:, bedroom_count:, bathroom_count:)
+  def initialize(number:, rent:, sqr_foot:, bedroom_count:, bathroom_count:)
     @number, @rent, @sqr_foot, @bedroom_count, @bathroom_count = number, rent, sqr_foot, bedroom_count, bathroom_count
+    @tenants = []
   end
+
+  def add_tenant(tenant:)
+    @tenants << tenant if tenant.credit_score_rating != 'bad'
+  end
+
 
 end
