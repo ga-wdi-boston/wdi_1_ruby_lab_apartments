@@ -10,9 +10,7 @@
 class Tenant
   attr_reader :name, :age, :credit_score
   def initialize(namer:, ager:, credit_scorer:)
-    @name = namer
-    @age = ager
-    @credit_score = credit_scorer
+    @name = namer, @age = ager, @credit_score = credit_scorer
   end
 
   def credit_score_rating
