@@ -21,5 +21,3 @@ class Tenant
   end
 end
 
-#This raises a specific error
-#raise "herpaderp heres my error"

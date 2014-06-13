@@ -7,7 +7,6 @@ class Apartment
   end
 
   def add_tenant(prospect)
-    #prospect.credit_rating != "bad" && beds - tenants.count != 0 ? tenants << prospect : raise "cannot add tenant"
     if prospect.credit_rating != 'bad' && tenants.count < beds
       tenants << prospect
     else
@@ -15,8 +14,13 @@ class Apartment
     end
   end
 
+
   def remove_tenant(name)
-    tenants.delete_if {|tenant| tenant.name == name}
+    if tenants.any?{|tenant| tenant.name == name}
+      tenants.delete_if{|tenant| tenant.name == name}
+    else
+      raise "Cannot find tenant"
+    end
   end
 
   def clear_tenants
@@ -43,3 +47,5 @@ class Apartment
   end
 
 end
+
+#REFACTOR remove mehtod names that describe the class

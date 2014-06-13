@@ -24,6 +24,7 @@ puts donnybrook.tenants
 
 donnybrook.remove_tenant('mike')
 
+
 puts "break here"
 puts donnybrook.tenants
 
@@ -36,4 +37,12 @@ donnybrook.add_tenant(andy)
 
 puts donnybrook.average_score
 puts donnybrook.credit_rating
+
+puts "Building tests"
+
+castle = Building.new('Dublin')
+puts castle.inspect
+
+castle.add_apartment(donnybrook)
+puts castle.apartments
 
