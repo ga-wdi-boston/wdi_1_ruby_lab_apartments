@@ -1,10 +1,7 @@
-
-#has an average credit score, calculated from all tenants
-#has a credit rating, calculated from the average credit score using the logic below
 require 'pry'
 
 class Apartment
-  #has a number, rent, square footage, number of bedrooms, and number of bathrooms
+
   attr_accessor :number, :rent, :sq_footage, :number_of_bedrooms, :number_of_bathrooms
   attr_reader :tenants
 
@@ -17,7 +14,6 @@ class Apartment
     @tenants = []
   end
 
-  # add a tenant, but if it has bad credit or there are not enough bedrooms, report an error
   def add_tenant(tenant) #(who ever calls this should pass a variable of a Tenant.new)
     @tenants << tenant
     if tenant.credit_rating == "bad"
@@ -32,7 +28,6 @@ class Apartment
     @tenants.delete(tenant) {'ERROR-NO TENANT FOUND'}
   end
 
-  #has a method that removes all tenants
   def remove_all_tenants
     @tenants.clear
   end
