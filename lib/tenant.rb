@@ -6,3 +6,27 @@
 #   * 660 or higher is "good"
 #   * 560 or higher is "mediocre"
 #   * anything lower is "bad"
+
+class Tenant
+
+  attr_reader :credit_rating
+  attr_accessor :name, :age, :credit_score
+
+  def initialize(name, age, credit_score)
+    @name, @age, @credit_score = name, age, credit_score
+  end
+
+  def credit_rating
+    if credit_score > 759
+     "excellent"
+    elsif credit_score > 725
+     "great"
+    elsif credit_score > 660
+     "good"
+    elsif credit_score > 560
+     "mediocre"
+    else
+      "bad"
+    end
+  end
+end
