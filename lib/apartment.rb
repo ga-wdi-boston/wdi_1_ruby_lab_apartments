@@ -1,4 +1,6 @@
 class Apartment
+  CREDIT_RATINGS = {760 => 'excellent', 725 => 'great', 660 => 'good', 560 => 'mediocre', 0 => 'bad'}
+
   attr_reader :number, :square_footage, :num_bedrooms, :num_bathrooms, :tenants, :tenant_count
   attr_accessor :rent
 
@@ -41,14 +43,7 @@ class Apartment
   end
 
   def credit_rating
-    case
-    when credit_score >= 760 then "excellent"
-    when credit_score >= 725 then "great"
-    when credit_score >= 660 then "good"
-    when credit_score >= 560 then "mediocre"
-    else
-      "bad"
-    end
+    CREDIT_RATINGS.each { |credit, rating| return rating if credit_score >= credit }
   end
 
 end
