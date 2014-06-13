@@ -7,6 +7,7 @@
 # * has a method that removes all tenants
 # * has an average credit score, calculated from all tenants
 # * has a credit rating, calculated from the average credit score using the logic below
+require_relative 'tenant'
 
 class Apartment
   attr_reader :number, :rent, :sqr_foot, :bedroom_count, :bathroom_count
@@ -17,8 +18,27 @@ class Apartment
   end
 
   def add_tenant(tenant:)
-    @tenants << tenant if tenant.credit_score_rating != 'bad'
+    @tenants << tenant if tenant.credit_score_rating != 'bad' && tenants.length <= bedroom_count
   end
 
+  def remove_tenant(tenant:)
+    @tenants.delete(tenant)
+  end
+
+  def remove_all_tenants
+    @tenants =[]
+  end
+
+  def avg_credit_score
+    total = 0
+    tenants.each{|ten| total +=ten.credit_score}
+    total / tenants.length
+  end
+
+  #private
+
+  def tenants
+    @tenants
+  end
 
 end
