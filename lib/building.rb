@@ -38,12 +38,6 @@ class Building
   end
 
   def apartments_by_credit_rating
-    apartments_by_credit = {}
-    apartments_by_credit["excellent"] = ((apartments.select { |apartment| apartment.credit_rating == "excellent"}).sort_by { |apartment| apartment.credit_score }).reverse
-    apartments_by_credit["great"] = ((apartments.select { |apartment| apartment.credit_rating == "great"}).sort_by { |apartment| apartment.credit_score }).reverse
-    apartments_by_credit["good"] = ((apartments.select { |apartment| apartment.credit_rating == "good"}).sort_by { |apartment| apartment.credit_score }).reverse
-    apartments_by_credit["mediocre"] = ((apartments.select { |apartment| apartment.credit_rating == "mediocre"}).sort_by { |apartment| apartment.credit_score }).reverse
-    apartments_by_credit["bad"] = ((apartments.select { |apartment| apartment.credit_rating == "bad"}).sort_by { |apartment| apartment.credit_score }).reverse
-    apartments_by_credit
+    apartments.group_by(&:credit_rating)
   end
 end
