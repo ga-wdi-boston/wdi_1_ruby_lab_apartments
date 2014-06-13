@@ -1,3 +1,4 @@
+require_relative '../lib/apartment.rb'
 class Building
   attr_accessor = :name
   attr_reader = :apartments
