@@ -30,4 +30,8 @@ class Apartment
     raise "No tenant found with that name/id" if !(@tenants.reject! { |candidate| (candidate.object_id == tenant || candidate.name.casecmp(tenant) == 0) })
   end
 
+  def evict_all
+    @tenants = []
+  end
+
 end
