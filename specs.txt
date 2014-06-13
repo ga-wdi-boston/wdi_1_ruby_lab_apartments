@@ -39,11 +39,12 @@ Phase 5 - Apartments 2.0
 
 2. move the new tenant method under private ** hold off for now
 
-3. method to remove a specific tenant by name, and raise error if that tenant is not found.
+3. method to remove a specific tenant by name, and raise error if that tenant is not found. ** come back to this
 
-4. method to remove all tenants
+# 4. method to remove all tenants
+** in commit message, note that tenants got moved to attr_accessor
 
-5. write method to calculate average credit score of the apartment
+# 5. write method to calculate average credit score of the apartment
 
 6. write method that produces a credit rating for the apartment itself
 
