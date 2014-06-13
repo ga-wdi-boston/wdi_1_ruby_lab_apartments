@@ -6,14 +6,14 @@ require_relative 'tenant'
 
 class Apartment
     CRED_RATINGS = {
-                  (0...560) => 'bad',
-                  (560...660) => 'mediocre',
-                  (660...725) => 'good',
-                  (725...760) => 'great',
-                  (760...1000) => 'excellent'
+                  560 => 'bad',
+                  560 => 'mediocre',
+                  660 => 'good',
+                  725 => 'great',
+                  760 => 'excellent'
                 }
 
-  attr_reader :number, :sq_footage, :num_beds, :num_baths, :tenants
+  attr_reader :number, :sq_footage, :num_beds, :num_baths
 
   def initialize(number:, sq_footage:, num_beds:, num_baths:)
     @numbber, @sq_footage, @num_beds, @num_baths = number, sq_footage, num_beds, num_baths
@@ -35,15 +35,18 @@ class Apartment
   def remove_tenant(tenant)
     if @tenants.include?(tenant)
       @tenants.delete(tenant)
+      puts "removed #{tenant.name}"
     else
       raise "That tenant does not live in this apartment"
     end
   end
 
   def clear_house
+    @tenants.clear
   end
 
   def avg_cred
+    @tenants.map { |tenant| tenant.cred }.reduce(0, &:+) / @tenants.count
   end
 
   def cred_rating

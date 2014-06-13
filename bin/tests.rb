@@ -17,4 +17,9 @@ house = Apartment.new(number: 2, sq_footage: 2000, num_beds: 4, num_baths: 1)
 
 puts house.inspect
 
+house.add_tenant(jake)
+house.add_tenant(chris)
+house.add_tenant(konrad)
+house.add_tenant(dan)
+
 binding.pry
