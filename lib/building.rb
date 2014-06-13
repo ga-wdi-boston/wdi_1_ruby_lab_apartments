@@ -45,7 +45,7 @@ class Building
   end
 
   def apartments_by_credit
-    tenant_list.sort{|x,y| x.credit_rating <=> y.credit_rating}
+    tenant_list.sort{|x,y| x.credit_score_rating <=> y.credit_score_rating}
   end
 
 end
