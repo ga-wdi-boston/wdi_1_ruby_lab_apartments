@@ -26,7 +26,7 @@ class Building
   end
 
   def monthly_revenue
-
+    @apartments.map { |appt| appt.rent }.reduce(0, &:+)
   end
 
   def tenants
