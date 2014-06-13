@@ -27,11 +27,11 @@ Phase 3 - Create apartment class
 
 Phase 4 - Create tenant class
 
-1. write initialize method that passes in a name (mandatory), age (mandatory), credit score (default to 0)
+# 1. write initialize method that passes in a name (mandatory), age (mandatory), credit score (default to 0)
 
-2. write a constant for each credit rating threshold
+# 2. write a constant for each credit rating threshold
 
-3. write a method that calculates the tenant’s credit rating
+# 3. write a method that calculates the tenant’s credit rating
 
 Phase 5 - Apartments 2.0
 

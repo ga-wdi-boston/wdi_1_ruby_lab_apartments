@@ -10,5 +10,9 @@ purple_house = Apartment.new(number: 4, rent: 1800, square_footage: 1000, bedroo
 
 brook.new_apartment(purple_house)
 
+myself = Tenant.new(name: 'Max Kohl', age: 25, credit_score: 730)
+
+bad = Tenant.new(name: 'Joe Shmoe', age: 22, credit_score: 500)
+
 
 binding.pry
