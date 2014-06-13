@@ -10,10 +10,29 @@ require 'pry'
 
 class Tenant
 
-  def initialize
+  attr_accessor name:, age:, credit_score:
 
+  def initialize(name:, age:, credit_score:)
+    @name = name
+    @age = age
+    @credit_score = credit_score
   end
 
+  def credit_rating
+    case credit_score
+    when credit_score >= 760
+      "excellent"
+    when 725..759
+      "great"
+    when 660..724
+      "good"
+    when 560..659
+      "mediocre"
+    else
+      "bad"
+    end
+
+  end
 
 end
 
