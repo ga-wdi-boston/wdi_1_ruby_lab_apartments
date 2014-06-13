@@ -24,6 +24,7 @@ class Apartment
   end
 
   def average_score
+    tenants.map(&:credit_score).reduce(0, :+) / tenants.count
   end
 
   def credit_rating

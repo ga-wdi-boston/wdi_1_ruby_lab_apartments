@@ -31,5 +31,8 @@ puts "break again"
 donnybrook.clear_tenants
 puts donnybrook.tenants
 
+donnybrook.add_tenant(mike)
+donnybrook.add_tenant(andy)
 
+puts donnybrook.average_score
 
