@@ -22,16 +22,17 @@ class Apartment
   end
 
   def add_tenant(tenant)
-    if credit_rating == "bad"
+    if tenant.credit_rating == :bad
       raise "Error: Tenant cannot be added: Credit too low"
     end
 
-    if bedrooms < tenant.count
+    if all_tenants.count > bedrooms
       raise "Error: Tenant cannot be added: No occupancy"
     end
 
-    all_tenants.push(tenant)
+    @all_tenants.push(tenant)
   end
+
 end
 
 

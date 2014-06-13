@@ -9,8 +9,8 @@
 
 class Tenant
 
-  attr_reader :credit_rating
-  attr_accessor :name, :age, :credit_score
+  attr_accessor :name, :age, :credit_score,
+  :credit_rating
 
   def initialize(name, age, credit_score)
     @name, @age, @credit_score = name, age, credit_score
@@ -18,15 +18,15 @@ class Tenant
 
   def credit_rating
     if credit_score > 759
-     "excellent"
+     :excellent
     elsif credit_score > 725
-     "great"
+     :great
     elsif credit_score > 660
-     "good"
+     :good
     elsif credit_score > 560
-     "mediocre"
+     :mediocre
     else
-      "bad"
+      :bad
     end
   end
 end
