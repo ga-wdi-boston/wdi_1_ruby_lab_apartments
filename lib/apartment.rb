@@ -14,7 +14,6 @@ class Apartment
     end
   end
 
-
   def remove_tenant(name)
     if tenants.any?{|tenant| tenant.name == name}
       tenants.delete_if{|tenant| tenant.name == name}
@@ -47,5 +46,3 @@ class Apartment
   end
 
 end
-
-#REFACTOR remove mehtod names that describe the class
