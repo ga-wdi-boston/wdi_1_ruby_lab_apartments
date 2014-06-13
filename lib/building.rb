@@ -17,8 +17,13 @@ class Building
   end
 
   # assumes no two apartments have the same number
-  def remove_appt(appt_num)
-    @apartments.delete_if{ |appt| appt.number == appt_num }
+  def remove_appt(appt_num, evict: false)
+    if @apartments.select{ |appt| appt.number == appt_num}.empty?
+      raise "Apartment 404 not found"
+    else
+      success = @apartments.reject!{ |appt| appt.number == appt_num && (appt.tenants.empty? || evict) }
+      raise "You must evict tenants to remove this apartment" unless success
+    end
   end
 
   def sq_footage
