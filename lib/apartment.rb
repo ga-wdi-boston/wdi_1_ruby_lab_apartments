@@ -28,7 +28,7 @@ class Apartment
   end
 
   def delete_all_tenant
-    Apartment1
+    self.tenants.clear
   end
 
 
