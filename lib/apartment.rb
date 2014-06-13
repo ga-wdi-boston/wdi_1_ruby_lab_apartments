@@ -6,11 +6,11 @@ require_relative 'tenant'
 
 class Apartment
     CRED_RATINGS = {
-                  560 => 'bad',
-                  560 => 'mediocre',
-                  660 => 'good',
+                  760 => 'excellent',
                   725 => 'great',
-                  760 => 'excellent'
+                  660 => 'good',
+                  560 => 'mediocre',
+                  0 => 'bad'
                 }
 
   attr_reader :number, :sq_footage, :num_beds, :num_baths
@@ -50,6 +50,8 @@ class Apartment
   end
 
   def cred_rating
+    avg = avg_cred
+    CRED_RATINGS.each { |value, rate| return rate if avg >= value }
   end
 
 end
