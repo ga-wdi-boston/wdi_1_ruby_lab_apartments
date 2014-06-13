@@ -1,4 +1,3 @@
-require_relative 'apartment'
+class Tenant
 
-class Tenant < Apartment
 end
