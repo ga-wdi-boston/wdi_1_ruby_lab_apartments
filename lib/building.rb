@@ -1,6 +1,6 @@
 class Building
-  # has an address
-  # has many apartments
+  # X  has an address
+  # X  has many apartments
   # the list of apartments should not be modified directly (bonus: actually prevent it from being modified directly)
   # has a method to add an apartment
   # has a method to remove a specific apartment by its number, which raises an error if the number is not found or the apartment currently has any tenants (bonus: allow overriding this constraint)
@@ -8,7 +8,10 @@ class Building
   # has a total monthly revenue, calculated from all apartment rents
   # has a list of tenants, pulled from the tenant lists of all apartments
   # has a method to retrieve all apartments grouped by credit rating (bonus: sort the groups by credit score)
-  def initialize
+  attr_reader :address, :num_of_apartments
+  def initialize(address, num_of_apartments)
+    @address, @num_of_apartments = address, num_of_apartments
+
   end
 
 end

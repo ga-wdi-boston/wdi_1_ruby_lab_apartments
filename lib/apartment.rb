@@ -1,4 +1,4 @@
-class Apartment < Building
+class Apartment
   # has a number, rent, square footage, number of bedrooms, and number of bathrooms
   # has many tenants
   # the list of tenants should not be modified directly (bonus: actually prevent it from being modified directly)
@@ -7,6 +7,11 @@ class Apartment < Building
   # has a method that removes all tenants
   # has an average credit score, calculated from all tenants
   # has a credit rating, calculated from the average credit score using the logic below
-  def initialize
+  attr_reader :apartment_num, :sq_footage, :bedrooms, :bathrooms
+  attr_accessor :rent
+
+  def initialize(apartment_num, rent, sq_footage, bedrooms, bathrooms)
+  @apartment_num, @rent, @sq_footage, @bedrooms, @bathrooms  = apartment_num, rent, sq_footage, bedrooms, bathrooms
   end
+
 end
