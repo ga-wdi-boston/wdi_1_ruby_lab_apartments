@@ -10,8 +10,9 @@
 
 class Building
   attr_reader :address, :apartments
+  NUMBER_APTS = 100
 
-  def initialize(address:, apartments:)
+  def initialize(address, apartments: NUMBER_APTS)
     @address = address
     @apartments = apartments
   end
