@@ -23,8 +23,8 @@ sf_apt2.add_tenant(luke)
 
 # sf_apt.remove_all
 
-puts sf_apt.average_credit_score
-puts sf_apt.average_credit_rating
+puts sf_apt.credit_score
+puts sf_apt.credit_rating
 
 # puts sf_apt.tenants
 
@@ -33,7 +33,7 @@ sf_building = Building.new(address: "1666 Page St")
 sf_building.add_apartment(sf_apt)
 sf_building.add_apartment(sf_apt2)
 
-# sf_building.remove_apartment(1)
+# sf_building.remove_apartment(1, has_tenants: false)
 
 puts sf_building.apartments
 
