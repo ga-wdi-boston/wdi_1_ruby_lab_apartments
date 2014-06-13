@@ -19,13 +19,15 @@ class Building
   # has method to remove specific apartment by number
   # which returns error if there is no such apartment OR if apt has tenants
 
-  def remove_apt(number)
+  def remove_apt(number, override: false)
     if !apartments.map{ |apt| apt.number }.include?(number)
       raise "Apartment not found."
 
     else
       apartments.select{ |apt| apt.number == number }.each do |apt|
         if apt.tenants.length == 0
+          apartments.delete(apt)
+        elsif override == true
           apartments.delete(apt)
         else
           raise "Apartment Occupied!"
