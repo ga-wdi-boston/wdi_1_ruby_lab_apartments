@@ -9,9 +9,11 @@
 #has a method to retrieve all apartments grouped by credit rating (bonus: sort the groups by credit score)
 
 class Building
+  attr_reader :address, :apartments
 
-  def initialize(address:)
+  def initialize(address:, apartments:)
     @address = address
+    @apartments = apartments
   end
 
 end
