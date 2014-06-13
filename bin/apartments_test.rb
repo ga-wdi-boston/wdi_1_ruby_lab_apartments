@@ -14,7 +14,13 @@ myself = Tenant.new(name: 'Max Kohl', age: 25, credit_score: 730)
 
 bad = Tenant.new(name: 'Joe Shmoe', age: 22, credit_score: 500)
 
-purple_house.new_tenant(myself)
+mediocre = Tenant.new(name: 'Billy Bob', age: 30, credit_score: 623)
 
+good = Tenant.new(name: 'This Guy', age: 37, credit_score: 688)
+
+excellent = Tenant.new(name: 'So Great', age: 45, credit_score: 790)
+
+purple_house.new_tenant(myself)
+purple_house.new_tenant(excellent)
 
 binding.pry

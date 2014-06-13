@@ -35,9 +35,9 @@ Phase 4 - Create tenant class
 
 Phase 5 - Apartments 2.0
 
-1. Modify new tenant method to raise error if tenant’s credit rating is bad or if the new tenant would push the number of tenants over the number of bedrooms
+# 1. Modify new tenant method to raise error if tenant’s credit rating is bad or if the new tenant would push the number of tenants over the number of bedrooms
 
-2. move the new tenant method under private
+2. move the new tenant method under private ** hold off for now
 
 3. method to remove a specific tenant by name, and raise error if that tenant is not found.
 
