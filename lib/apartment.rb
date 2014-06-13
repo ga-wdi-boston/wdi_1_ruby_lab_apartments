@@ -1,12 +1,16 @@
 class Apartment
 
-  attr_accessor :number, :rent, :sq_ft, :beds, :baths, :tenants
+  attr_accessor :number, :rent, :sq_ft, :beds, :baths
+  attr_reader :tenants
 
+  # has a number, rent, squarefootage, number of bedrooms, and number of bathrooms
   def initialize(number:, rent:, sq_ft:, beds:, baths:)
     @number, @rent, @sq_ft, @beds, @baths = number, rent, sq_ft, beds, baths
+    # has many tenants
     @tenants = []
   end
 
+  # has a method to add tenants
   def add_tenant(tenant)
 
     # Possible errors
@@ -19,5 +23,34 @@ class Apartment
       tenants << tenant
     end
   end
+
+  # has a method to remove tenants
+  def remove_tenant(object: nil, name: nil)
+
+    if object
+      if tenants.include?(object)
+        tenants.delete(object)
+      else
+        raise "Person not found"
+      end
+
+    elsif name
+      if tenants.map { |person| person.name }.include?(name)
+        tenants.delete_if do |person|
+          person.name == name
+        end
+      else
+        raise "Person not found"
+      end
+
+    else
+      raise "Provide an argument."
+    end
+
+  end
+
+  # has an average credit score, calculated from all tenants
+
+  # has a credit rating, calculated from average credit score
 
 end
