@@ -16,6 +16,11 @@ class Apartment < Tenant
     @individual_tenants = []
   end
 
+  def tenant_error(credit_score:, num_bedrooms:)
+    raise "Warning! Shitty tenant. Do not offer a lease."
+    raise "Warning! There are not enough bedrooms. Do not offer lease."
+  end
+
 
 
 
