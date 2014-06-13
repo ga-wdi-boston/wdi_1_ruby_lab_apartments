@@ -27,7 +27,7 @@ class Apartment
   end
 
   def evict(tenant)
-    @tenants.delete_if { |candidate| (candidate.object_id == tenant || candidate.name.casecmp(tenant) == 0) }
+    raise "No tenant found with that name/id" if !(@tenants.reject! { |candidate| (candidate.object_id == tenant || candidate.name.casecmp(tenant) == 0) })
   end
 
 end
