@@ -52,6 +52,10 @@ class Apartment
 
   end
 
+  def evict
+    tenants.clear
+  end
+
   # has an average credit score, calculated from all tenants
   def average_credit_score
     if tenants.length > 0
