@@ -33,6 +33,11 @@ class Apartment
 
   # tenants removed by passing in object
   def remove_tenant(tenant)
+    if @tenants.include?(tenant)
+      @tenants.delete(tenant)
+    else
+      raise "That tenant does not live in this apartment"
+    end
   end
 
   def clear_house
