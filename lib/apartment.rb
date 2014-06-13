@@ -9,7 +9,7 @@
 
 class Apartment
 
-  attr_reader :number, :rent, :square_footage, :bedrooms, :bathrooms, :tenants
+  attr_reader :number, :rent, :square_footage, :bedrooms, :bathrooms
 
   def initialize (number:, rent:, square_footage:, bedrooms:, bathrooms:)
     @number, @rent, @square_footage, @bedrooms, @bathrooms = number, rent, square_footage, bedrooms, bathrooms
@@ -24,6 +24,10 @@ class Apartment
     else
       @tenants << tenant
     end
+  end
+
+  def evict(tenant)
+    @tenants.delete_if { |candidate| (candidate.object_id == tenant || candidate.name.casecmp(tenant) == 0) }
   end
 
 end
