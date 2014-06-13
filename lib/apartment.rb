@@ -10,7 +10,7 @@
 require_relative 'tenant'
 
 class Apartment
-  attr_reader :number, :rent, :sqr_foot, :bedroom_count, :bathroom_count, :tenants
+  attr_reader :number, :rent, :sqr_foot, :bedroom_count, :bathroom_count
 
   def initialize(number:, rent:, sqr_foot:, bedroom_count:, bathroom_count:)
     @number, @rent, @sqr_foot, @bedroom_count, @bathroom_count = number, rent, sqr_foot, bedroom_count, bathroom_count

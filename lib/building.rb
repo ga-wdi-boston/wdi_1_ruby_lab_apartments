@@ -38,15 +38,14 @@ class Building
     total
   end
 
-  #need to check
   def tenant_list
-    tenants = []
-    apartments.each{|apt| total += apt.tenants}
-    tenants
+    list = []
+    apartments.compact.each{|apt| list += apt.tenants}
+    list.compact
   end
 
   def apartments_by_credit
-
+    tenant_list.sort{|x,y| x.credit_rating <=> y.credit_rating}
   end
 
 end
