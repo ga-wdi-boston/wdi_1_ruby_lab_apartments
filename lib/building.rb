@@ -36,7 +36,7 @@ class Building
   end
 
   def appts_by_cred
+    @apartments.group_by { |appt| appt.cred_rating }
   end
-
 
 end

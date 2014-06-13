@@ -9,7 +9,7 @@ chris = Tenant.new(name: "Chris Garcia", age: 21, cred: 700)
 
 konrad = Tenant.new(name: "Konrad Gessler", age: 21, cred: 650)
 
-reject = Tenant.new(name: "Rejected", age: 5, cred: 300)
+amazing = Tenant.new(name: "Amazing", age: 5, cred: 800)
 
 puts jake.inspect
 
@@ -40,10 +40,10 @@ appt_four.add_tenant(chris)
 appt_four.add_tenant(konrad)
 appt_four.add_tenant(dan)
 
-appt_five.add_tenant(jake)
-appt_five.add_tenant(chris)
-appt_five.add_tenant(konrad)
-appt_five.add_tenant(dan)
+appt_five.add_tenant(amazing)
+appt_five.add_tenant(amazing)
+appt_five.add_tenant(amazing)
+appt_five.add_tenant(amazing)
 
 complex = Building.new(address: '123 Main Street')
 complex.add_appt(appt_one)
@@ -53,9 +53,9 @@ complex.add_appt(appt_four)
 complex.add_appt(appt_five)
 
 puts complex.inspect
-complex.remove_appt(appt_three.number)
-complex.remove_appt(appt_four.number)
-complex.remove_appt(appt_five.number)
+# complex.remove_appt(appt_three.number)
+# complex.remove_appt(appt_four.number)
+# complex.remove_appt(appt_five.number)
 
 
 
