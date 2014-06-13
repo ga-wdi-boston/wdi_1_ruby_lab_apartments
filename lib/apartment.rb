@@ -33,7 +33,8 @@ class Apartment
   def remove_tenant(name: nil, id: nil, a_tenant: nil)
     deleted = false
     tenants = tenants.reject do |tenant|
-      deleted = (tenant == a_tenant || tenant.object_id == id || tenant.name == name)
+      last_eval = (tenant == a_tenant || tenant.object_id == id || tenant.name == name)
+      deleted = last_eval unless deleted
     end
     tenants.freeze
 
