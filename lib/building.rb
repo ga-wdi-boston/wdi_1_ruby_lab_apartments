@@ -20,14 +20,19 @@ class Building
   end
 
   def total_square_ft
+    apartments.map(&:square_ft).reduce(0, :+)
   end
 
   def total_monthly_rev
+    apartments.map(&:rent).reduce(0, :+)
   end
 
   def tenant_list
+    apartments.map(&:tenants)
   end
 
+  def retrieve_apartments
+  end
 
 
 end
