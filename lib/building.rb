@@ -3,7 +3,7 @@ require_relative 'apartment'
 
 # Represents an apartment building
 class Building
-  attr_reader @address
+  attr_reader :address
 
   # Creates a new building with the given address.
   def initialize(address)
@@ -27,8 +27,7 @@ class Building
   # The method will raise an error if the apartment does not exist or if
   # there are current tenants, unless the given eviction test is set to true.
   def remove_apartment(apt_number, evict = false)
-    success = @apartments.reject! { |e|  e.number == apt_number
-      && (e.tenants.empty? || evict == true) }
+    success = @apartments.reject! { |e|  e.number == apt_number && (e.tenants.empty? || evict == true) }
     if(success == nil)
       raise 'Apartment not found or has current tenants'
     end
@@ -36,12 +35,12 @@ class Building
 
   # Returns the total square footage of rental space in the building.
   def total_area
-    @apartments.each(&:area).reduce(0, &:+)
+    @apartments.map {|e| e.area }.reduce(0, &:+)
   end
 
   # Returns the monthly revenue of this building.
   def monthly_revenue
-    @apartments.each(&:rent).reduce(0, &:+)
+    @apartments.map {|e| e.rent }.reduce(0, &:+)
   end
 
   # Returns an array of all current tenants in the building.

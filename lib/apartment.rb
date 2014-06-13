@@ -48,7 +48,7 @@ class Apartment
 
   #Returns the average credit score.
   def credit_score
-    @tenants(&:credit_score).reduce(0, &:+) / @tenants.size
+    @tenants.map {|e| e.credit_score }.reduce(0, &:+) / @tenants.size
   end
 
   # Returns the avergae credit rating of the apartment tenants.
