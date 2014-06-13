@@ -26,9 +26,13 @@ class Building
   end
 
   def monthly_revenue
+
   end
 
   def tenants
+    all_tenants = []
+    @apartments.map { |appt| all_tenants.concat(appt.tenants) }
+    all_tenants
   end
 
   def appts_by_cred

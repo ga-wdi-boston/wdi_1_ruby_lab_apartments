@@ -13,7 +13,7 @@ class Apartment
                   0 => 'bad'
                 }
 
-  attr_reader :number, :sq_footage, :num_beds, :num_baths
+  attr_reader :number, :sq_footage, :num_beds, :num_baths, :tenants
 
   def initialize(number:, sq_footage:, num_beds:, num_baths:)
     @number, @sq_footage, @num_beds, @num_baths = number, sq_footage, num_beds, num_baths
