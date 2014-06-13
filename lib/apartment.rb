@@ -7,6 +7,9 @@
 # has an average credit score, calculated from all tenants
 # has a credit rating, calculated from the average credit score using the logic below
 
+# figure out how to throw multiple errors for evict
+# figure out how to do average credit rating without copy pasting (modules/mixins)
+
 class Apartment
 
   attr_reader :number, :rent, :square_footage, :bedrooms, :bathrooms
@@ -33,5 +36,25 @@ class Apartment
   def evict_all
     @tenants = []
   end
+
+  def average_credit_score
+    @tenants.map(&:credit_score).reduce(0, :+) / @tenants.length
+  end
+
+  # look up how to do this without copy/pasting other method
+  def average_credit_rating
+    if average_credit_score > 760
+      "excellent"
+    elsif average_credit_score > 725
+      "great"
+    elsif average_credit_score > 660
+      "good"
+    elsif average_credit_score > 560
+      "mediocre"
+    else
+      "bad"
+    end
+  end
+
 
 end
