@@ -26,18 +26,18 @@ class Apartment
 
   def credit_rating
     if credit_score >= 760
-      credit_rating = 'excellent'
+      'excellent'
     elsif (725..759).member?(credit_score)
-      credit_rating = 'great'
+      'great'
     elsif (660..724).member?(credit_score)
-      credit_rating = 'good'
+       'good'
     elsif (560..659).member?(credit_score)
-      credit_rating = 'mediocre'
+       'mediocre'
     else
-      credit_rating = 'bad'
+       'bad'
     end
-    credit_rating
-  end
+
+end
 
   # def remove_a_tenant(tenant, name: '')
   #   if tenants.include?(tenant)
