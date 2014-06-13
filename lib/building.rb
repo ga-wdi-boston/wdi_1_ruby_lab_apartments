@@ -40,10 +40,10 @@ class Building
     apartments.map { |apt| apt.sq_ft }.reduce(0, &:+)
   end
 
-
-###    tenants.map{ |person| person.credit_score }.reduce(0, &:+)
-
   # has total monthly revenue
+  def revenue
+    apartments.map { |apt| apt.rent }.reduce(0, &:+)
+  end
 
   # has list of tenants
 
