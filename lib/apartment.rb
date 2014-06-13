@@ -13,10 +13,10 @@ class Apartment
                   0 => 'bad'
                 }
 
-  attr_reader :number, :sq_footage, :num_beds, :num_baths, :tenants
+  attr_reader :number, :sq_footage, :num_beds, :num_baths, :tenants, :rent
 
-  def initialize(number:, sq_footage:, num_beds:, num_baths:)
-    @number, @sq_footage, @num_beds, @num_baths = number, sq_footage, num_beds, num_baths
+  def initialize(number:, sq_footage:, num_beds:, num_baths:, rent:)
+    @number, @sq_footage, @num_beds, @num_baths, @rent = number, sq_footage, num_beds, num_baths, rent
     # new appt initialized with no tenants, must be added with method
     @tenants = []
   end
@@ -35,7 +35,6 @@ class Apartment
   def remove_tenant(tenant)
     if @tenants.include?(tenant)
       @tenants.delete(tenant)
-      puts "removed #{tenant.name}"
     else
       raise "That tenant does not live in this apartment"
     end
