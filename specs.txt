@@ -1,0 +1,70 @@
+
+# Phase 1 - Create classes and wire them up
+
+# COMPLETE
+
+Phase 2 - Create building class
+
+# 1. write initialize method that passes in a name (mandatory)
+
+# 2. initializes an empty array for apartments (doesn't need to be passed into the method as an argument)
+
+# 3. write method that creates a new apartment and shovels it into the building’s apartments array
+
+# 4. set attr_reader for the list of apartments
+
+Phase 3 - Create apartment class
+
+1. write initialize method that passes in a number (mandatory), rent (mandatory), square footage (mandatory), number of bedrooms (default to 1), number of bathrooms (default to 0)
+
+**Once this is done, change Apartment.new in building.new_apartment to super
+
+2. initializes an empty array for tenants (doesn’t need to be passed into the method as an argument)
+
+3. set attr_reader for the list of tenants
+
+4. write method that creates a new tenant and shovels it into the apartment’s tenants array
+
+5. move new tenant method under private
+
+Phase 4 - Create tenant class
+
+1. write initialize method that passes in a name (mandatory), age (mandatory), credit score (default to 0)
+
+2. write a constant for each credit rating threshold
+
+3. write a method that calculates the tenant’s credit rating
+
+Phase 5 - Apartments 2.0
+
+1. Modify new tenant method to raise error if tenant’s credit rating is bad or if the new tenant would push the number of tenants over the number of bedrooms
+
+2. move the new tenant method under private
+
+3. method to remove a specific tenant by name, and raise error if that tenant is not found.
+
+4. method to remove all tenants
+
+5. write method to calculate average credit score of the apartment
+
+6. write method that produces a credit rating for the apartment itself
+
+Phase 6 - Building 2.0
+
+1. write method to remove a specific apartment by number, and raise error if the number is not found or if the apartment has any tenants
+
+2. write method to calculate total square footage based on all apartments
+
+3. write method to calculate total monthly revenue, based on all apartments
+
+4. write method to show a list of all tenants
+
+5. write method to retrieve all apartments grouped by credit score
+
+Phase 7 - Bonuses!
+
+1. all apartments grouped by credit score bonus: sort the groups by credit score
+
+2. remove specific apartment by its number, allow overriding of this constraint
+
+3. remove tenant bonus, do this without checking classes
