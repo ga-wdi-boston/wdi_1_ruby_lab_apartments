@@ -22,6 +22,7 @@ class Building
   end
 
   def sq_footage
+    @apartments.map { |appt| appt.sq_footage }.reduce(0, &:+)
   end
 
   def monthly_revenue
