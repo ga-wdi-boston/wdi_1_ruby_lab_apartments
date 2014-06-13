@@ -35,6 +35,20 @@ class Apartment
     total / tenants.length
   end
 
+  def credit_rating
+    if avg_credit_score >= 760
+      credit_score_rating = 'excellent'
+    elsif avg_credit_score >= 725
+      credit_score_rating = 'great'
+    elsif avg_credit_score >= 660
+      credit_score_rating = 'good'
+    elsif avg_credit_score >=560
+      credit_score_rating ='mediocre'
+    else credit_score_rating = 'bad'
+    end
+    credit_score_rating
+  end
+
   #private
 
   def tenants
