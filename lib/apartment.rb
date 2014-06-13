@@ -22,5 +22,14 @@ class Apartment
 
   end
 
+  def delete_tenant(name)
+    Apartment1.tenants.delete_if {|tenant| tenant.name == name}
+    #can't detelete by reference id
+  end
+
+
+
+
+
 end
 
