@@ -31,9 +31,23 @@ class Apartment
     self.tenants.clear
   end
 
+  def credit_average
+     self.tenants.map{|score| score.credit_score}.reduce(0){|sum,x| sum + x } / self.tenants.length
+  end
 
-
-
+ def credit_check
+    if credit_average >= 760
+      'excellent'
+    elsif credit_average >= 725
+      'great'
+    elsif credit_average >= 660
+      'good'
+    elsif credit_average >= 560
+      'medicore'
+    else
+      'bad'
+    end
+  end
 
 end
 
