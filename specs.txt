@@ -3,7 +3,7 @@
 
 # COMPLETE
 
-Phase 2 - Create building class
+# Phase 2 - Create building class
 
 # 1. write initialize method that passes in a name (mandatory)
 
@@ -15,17 +15,15 @@ Phase 2 - Create building class
 
 Phase 3 - Create apartment class
 
-1. write initialize method that passes in a number (mandatory), rent (mandatory), square footage (mandatory), number of bedrooms (default to 1), number of bathrooms (default to 0)
+# 1. write initialize method that passes in a number (mandatory), rent (mandatory), square footage (mandatory), number of bedrooms (default to 1), number of bathrooms (default to 0)
 
-**Once this is done, change Apartment.new in building.new_apartment to super
+# 2. initializes an empty array for tenants (doesn’t need to be passed into the method as an argument)
 
-2. initializes an empty array for tenants (doesn’t need to be passed into the method as an argument)
+# 3. set attr_reader for the list of tenants
 
-3. set attr_reader for the list of tenants
+# 4. write method that creates a new tenant and shovels it into the apartment’s tenants array
 
-4. write method that creates a new tenant and shovels it into the apartment’s tenants array
-
-5. move new tenant method under private
+5. move new tenant method under private ** ignore this for now
 
 Phase 4 - Create tenant class
 
@@ -68,3 +66,5 @@ Phase 7 - Bonuses!
 2. remove specific apartment by its number, allow overriding of this constraint
 
 3. remove tenant bonus, do this without checking classes
+
+4. write a constant that is a $/square footage multiplier. then, calculate rent based on the square footage that is passed through

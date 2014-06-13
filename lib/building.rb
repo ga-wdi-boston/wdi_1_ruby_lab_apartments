@@ -6,7 +6,7 @@ class Building
     @apartments = []
   end
 
-  def new_apartment
-    @apartments << Apartment.new
+  def new_apartment(apartment)
+    @apartments.push(apartment)
   end
 end
