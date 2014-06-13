@@ -14,5 +14,7 @@ myself = Tenant.new(name: 'Max Kohl', age: 25, credit_score: 730)
 
 bad = Tenant.new(name: 'Joe Shmoe', age: 22, credit_score: 500)
 
+purple_house.new_tenant(myself)
+
 
 binding.pry
