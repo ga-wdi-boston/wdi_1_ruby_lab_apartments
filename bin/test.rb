@@ -58,6 +58,8 @@ puts castle.total_monthly_rev
 
 puts castle.tenant_list
 
+puts castle.retrieve_apartments('good')
+
 
 
 

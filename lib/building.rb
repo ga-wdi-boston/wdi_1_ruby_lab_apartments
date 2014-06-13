@@ -11,7 +11,6 @@ class Building
   end
 
   def remove(number)
-    #update for error message similar to remove tenant
     if apartments.any? {|apartment| apartment.number == number}
       apartments.delete_if {|apartment| apartment.number == number}
     else
@@ -31,8 +30,8 @@ class Building
     apartments.map(&:tenants)
   end
 
-  def retrieve_apartments
+  def retrieve_apartments(rating)
+    apartments.map {|apartment| apartment if apartment.credit_rating == rating}
   end
-
 
 end
