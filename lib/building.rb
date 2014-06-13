@@ -22,10 +22,31 @@ class Building
     @apartments << apartment
   end
 
+  def remove_apartment(apartment:)
+    @apartments.remove(apartment)
+  end
+
   def total_square_footage
     total = 0
     apartments.each{|apt| total += apt.sqr_foot}
     total
+  end
+
+  def total_monthly_revenue
+    total = 0
+    apartments.each{|apt| total += apt.rent}
+    total
+  end
+
+  #need to check
+  def tenant_list
+    tenants = []
+    apartments.each{|apt| total += apt.tenants}
+    tenants
+  end
+
+  def apartments_by_credit
+
   end
 
 end
