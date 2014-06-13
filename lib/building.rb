@@ -17,4 +17,8 @@ class Building
     @apartments = apartments
   end
 
+  def add_apts(number)
+    NUMBER_APTS + number
+  end
+
 end
