@@ -35,4 +35,5 @@ donnybrook.add_tenant(mike)
 donnybrook.add_tenant(andy)
 
 puts donnybrook.average_score
+puts donnybrook.credit_rating
 

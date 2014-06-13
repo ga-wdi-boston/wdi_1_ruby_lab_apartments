@@ -27,7 +27,19 @@ class Apartment
     tenants.map(&:credit_score).reduce(0, :+) / tenants.count
   end
 
+  #refactor opportunity?
   def credit_rating
+    if average_score >= 760
+      "excellent"
+    elsif average_score >= 725
+      "great"
+    elsif average_score >= 660
+      "good"
+    elsif average_score >= 560
+      "mediocre"
+    else
+      "bad"
+    end
   end
 
 end
