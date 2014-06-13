@@ -49,11 +49,16 @@ class Apartment
     else
       raise "Provide an argument."
     end
+
   end
 
   # has an average credit score, calculated from all tenants
   def average_credit_score
-    tenants.map{ |person| person.credit_score }.reduce(0, &:+)/tenants.length
+    if tenants.length > 0
+      tenants.map{ |person| person.credit_score }.reduce(0, &:+)/tenants.length
+    else
+      0
+    end
   end
 
   # has a credit rating, calculated from average credit score

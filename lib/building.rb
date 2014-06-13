@@ -46,7 +46,19 @@ class Building
   end
 
   # has list of tenants
+  def tenants
+    tenant_list = []
+    apartments.each do |apt|
+      apt.tenants.each do |person|
+        tenant_list.push(person)
+      end
+    end
+    tenant_list
+  end
 
   # has method to retrieve all apts grouped by credit rating
+  def credit_ratings
+    apartments.group_by{ |apt| apt.credit_rating }
+  end
 
 end
