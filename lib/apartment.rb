@@ -15,4 +15,18 @@ class Apartment
     end
   end
 
+  def remove_tenant(name)
+    tenants.delete_if {|tenant| tenant.name == name}
+  end
+
+  def clear_tenants
+    tenants.clear
+  end
+
+  def average_score
+  end
+
+  def credit_rating
+  end
+
 end
