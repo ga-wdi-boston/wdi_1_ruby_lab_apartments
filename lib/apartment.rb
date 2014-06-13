@@ -16,7 +16,7 @@ class Apartment
   attr_reader :number, :sq_footage, :num_beds, :num_baths
 
   def initialize(number:, sq_footage:, num_beds:, num_baths:)
-    @numbber, @sq_footage, @num_beds, @num_baths = number, sq_footage, num_beds, num_baths
+    @number, @sq_footage, @num_beds, @num_baths = number, sq_footage, num_beds, num_baths
     # new appt initialized with no tenants, must be added with method
     @tenants = []
   end

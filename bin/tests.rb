@@ -1,4 +1,4 @@
-require_relative '../lib/apartment'
+require_relative '../lib/building'
 require 'pry'
 
 jake = Tenant.new(name: "Jake Austin", age: 21, cred: 600)
@@ -13,13 +13,51 @@ reject = Tenant.new(name: "Rejected", age: 5, cred: 300)
 
 puts jake.inspect
 
-house = Apartment.new(number: 2, sq_footage: 2000, num_beds: 4, num_baths: 1)
+appt_one = Apartment.new(number: 1, sq_footage: 2000, num_beds: 4, num_baths: 1)
+appt_two = Apartment.new(number: 2, sq_footage: 500, num_beds: 4, num_baths: 1)
+appt_three = Apartment.new(number: 3, sq_footage: 1000, num_beds: 4, num_baths: 1)
+appt_four = Apartment.new(number: 4, sq_footage: 7000, num_beds: 4, num_baths: 1)
+appt_five = Apartment.new(number: 5, sq_footage: 3000, num_beds: 4, num_baths: 1)
+appt_six = Apartment.new(number: 6, sq_footage: 6000, num_beds: 4, num_baths: 1)
 
-puts house.inspect
+appt_one.add_tenant(jake)
+appt_one.add_tenant(chris)
+appt_one.add_tenant(konrad)
+appt_one.add_tenant(dan)
 
-house.add_tenant(jake)
-house.add_tenant(chris)
-house.add_tenant(konrad)
-house.add_tenant(dan)
+appt_two.add_tenant(jake)
+appt_two.add_tenant(chris)
+appt_two.add_tenant(konrad)
+appt_two.add_tenant(dan)
+
+appt_three.add_tenant(jake)
+appt_three.add_tenant(chris)
+appt_three.add_tenant(konrad)
+appt_three.add_tenant(dan)
+
+appt_four.add_tenant(jake)
+appt_four.add_tenant(chris)
+appt_four.add_tenant(konrad)
+appt_four.add_tenant(dan)
+
+appt_five.add_tenant(jake)
+appt_five.add_tenant(chris)
+appt_five.add_tenant(konrad)
+appt_five.add_tenant(dan)
+
+complex = Building.new(address: '123 Main Street')
+complex.add_appt(appt_one)
+complex.add_appt(appt_two)
+complex.add_appt(appt_three)
+complex.add_appt(appt_four)
+complex.add_appt(appt_five)
+
+puts complex.inspect
+complex.remove_appt(appt_three.number)
+complex.remove_appt(appt_four.number)
+complex.remove_appt(appt_five.number)
+
+
+
 
 binding.pry
