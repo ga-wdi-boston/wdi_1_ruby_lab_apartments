@@ -36,16 +36,16 @@ class Apartment
     tenants.length
   end
 
-  def average_credit_score
+  def credit_score
     (tenants.map(&:credit_score).reduce(0,:+) / tenants.length) if tenants.any?
   end
 
-  def average_credit_rating
+  def credit_rating
     case
-    when average_credit_score >= 760 then "excellent"
-    when average_credit_score >= 725 then "great"
-    when average_credit_score >= 660 then "good"
-    when average_credit_score >= 560 then "mediocre"
+    when credit_score >= 760 then "excellent"
+    when credit_score >= 725 then "great"
+    when credit_score >= 660 then "good"
+    when credit_score >= 560 then "mediocre"
     else
       "bad"
     end
