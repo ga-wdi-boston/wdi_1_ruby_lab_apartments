@@ -1,3 +1,6 @@
+require_relative 'tenant'
+require_relative 'credit_ratings'
+
 class Apartment
 
   attr_accessor :number, :rent, :sq_ft, :beds, :baths
@@ -54,5 +57,8 @@ class Apartment
   end
 
   # has a credit rating, calculated from average credit score
+  def credit_rating
+    Credit_Ratings.credit_chart(average_credit_score)
+  end
 
 end
