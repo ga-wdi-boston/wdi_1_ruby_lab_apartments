@@ -23,16 +23,16 @@ class Apartment
   end
 
   def delete_tenant(name)
-    self.tenants.delete_if {|tenant| tenant.name == name}
+    tenants.delete_if {|tenant| tenant.name == name}
     #can't detelete by reference id
   end
 
   def delete_all_tenant
-    self.tenants.clear
+    tenants.clear
   end
 
   def credit_average
-     self.tenants.map{|score| score.credit_score}.reduce(0){|sum,x| sum + x } / self.tenants.length
+    tenants.map{|score| score.credit_score}.reduce(0){|sum,x| sum + x } / tenants.length
   end
 
  def credit_check

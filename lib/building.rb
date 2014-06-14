@@ -13,7 +13,7 @@ class Building
   end
 
   def delete_apartment(number)
-    self.apartments.delete_if {|apartment| apartment.number == number}
+    apartments.delete_if{|apartment| apartment.number == number}
     #can't detelete by reference id
   end
 
