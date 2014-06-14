@@ -22,12 +22,9 @@ class Building
     apartments.delete_if{|apartment| apartment.number == number}
   end
 
-  # def delete_all_tenant
-  #   self.tenants.clear
-  # end
+  def total_square_footage
+    apartments.map{|footage| footage.square_footage}.reduce(0){|sum,x| sum + x }
+  end
 
-  # def credit_average
-  #   self.tenants.map{|score| score.credit_score}.reduce(0){|sum,x| sum + x } / self.tenants.length
-  # end
 
 end
