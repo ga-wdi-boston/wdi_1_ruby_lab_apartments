@@ -8,8 +8,8 @@ class Building
     @apartments = Array.new(0)
   end
 
-  def add_apartment(number,rent,square_footage,bedroom,bathroom)
-    @apartments << Apartment.new(number,rent,square_footage,bedroom,bathroom)
+  def add_apartment(*apartment)
+    @apartments = apartment
   end
 
   def delete_apartment(number)
@@ -31,6 +31,7 @@ class Building
   end
 
   def tenants_list
+    apartments.map{|tenants_list| tenants_list.tenants}
   end
 
 end
