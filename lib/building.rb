@@ -34,4 +34,8 @@ class Building
     apartments.map{|tenants_list| tenants_list.tenants}
   end
 
+  def group_by_credit
+    apartments.group_by{|apartment| apartment.credit_average }
+  end
+
 end
