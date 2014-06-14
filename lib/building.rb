@@ -13,8 +13,13 @@ class Building
   end
 
   def delete_apartment(number)
+    apartment = apartments.select{|apartment| apartment.number == number}
+    if apartment == []
+      raise "Your apartment doesn't exit!"
+    elsif apartment[0].tenants.length != 0
+      raise "Someone is living here."
+    end
     apartments.delete_if{|apartment| apartment.number == number}
-    #can't detelete by reference id
   end
 
   # def delete_all_tenant
