@@ -26,5 +26,11 @@ class Building
     apartments.map{|footage| footage.square_footage}.reduce(0){|sum,x| sum + x }
   end
 
+  def total_monthly_revenue
+    apartments.map{|rents| rents.rent}.reduce(0){|sum,x| sum + x }
+  end
+
+  def tenants_list
+  end
 
 end
