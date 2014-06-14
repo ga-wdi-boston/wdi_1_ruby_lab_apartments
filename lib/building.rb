@@ -11,16 +11,18 @@ class Building
     @apartments = Set.new
   end
 
-  # Returns a list of apartments in this building.
+  # Returns a list of apartments in this building. Subsequent modifications
+  # to the array will not affect the bilding's set of apartments.
   def apartments
     result = []
     @apartments.each { |e| result << e }
     result
   end
 
-  # Adds the given apartment to the building set.
+  # Adds the given apartment to the building set, or nil if the apartment
+  # already exists.
   def add_apartment(a)
-    @apartments.add(a)
+    @apartments.add?(a)
   end
 
   # Removes the apartment identified by the given number from the building set.
@@ -28,9 +30,8 @@ class Building
   # there are current tenants, unless the given eviction test is set to true.
   def remove_apartment(apt_number, evict = false)
     success = @apartments.reject! { |e|  e.number == apt_number && (e.tenants.empty? || evict == true) }
-    if(success == nil)
-      raise 'Apartment not found or has current tenants'
-    end
+    raise 'Apartment not found or has current tenants' if !success
+    true
   end
 
   # Returns the total square footage of rental space in the building.
