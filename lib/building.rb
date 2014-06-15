@@ -19,7 +19,14 @@ class Building
     @apartments << apartment
   end
 
-  def remove_apartment(apartment)
-    @apartments.reject!
+  def remove_apartment(apt_number)
+    if (@apartments.reject { |apartment| apt_number == apartment.number }) == @apartments
+      raise "No apartment with that number found"
+    elsif !(@apartments.reject! { |apartment| (apt_number == apartment.number && apartment.tenants.length != 0) } )
+      puts "That apartment still has tenants.  Are you sure you want to remove it? y/n"
+      if gets[0] == "y"
+        @apartments.reject! { |apartment| apt_number == apartment.number }
+      end
+    end
   end
 end
