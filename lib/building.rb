@@ -10,6 +10,8 @@
 
 class Building
 
+  attr_reader :apartments
+
   def initialize(address)
     @address = address
     @apartments = []
@@ -29,4 +31,13 @@ class Building
       end
     end
   end
+
+  def square_footage
+    @apartments.map(&:square_footage).reduce(0, :+)
+  end
+
+  def monthly_revenue
+    @apartments.map(&:rent).reduce(0, :+)
+  end
+
 end
