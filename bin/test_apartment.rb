@@ -14,8 +14,9 @@ apartment.add_tenant('John')
 apartment.add_tenant('Jodi')
 apartment.add_tenant('Kim')
 puts apartment.tenants
-puts apartment.tenants[0]
-apartment.remove_tenant(3)
+#puts apartment.tenants[0]
+#apartment.remove_tenant(3)
+apartment.remove_all_tenants
 puts apartment.tenants
 
 
