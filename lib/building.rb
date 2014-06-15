@@ -28,8 +28,11 @@ class Building
   end
 
  #has a method to remove a specific apartment by its number, which raises an error if the number is not found or the apartment currently has any tenants (bonus: allow overriding this constraint)
-  def remove_apt(apt.number)
-    @apts.delete(apt.number) { 'ERROR-NO APARTMENT NUMBER FOUND' }
+  def remove_apt(number)
+    @apts.delete_if{ |apt| apt.number == number)
+    if @apts.include?(number) == false
+      raise 'ERROR-NO APARTMENT NUMBER FOUND'
+    end
   end
 
   # has a total square footage, calculated from all apartments
@@ -44,7 +47,7 @@ class Building
   end
 
   # has a list of tenants, pulled from the tenant lists of all apartments
-  def tenant_list
+  def tenant_list(tenants) #(whoever call this needs to pass the Variable of the Apartment.new.tenants array)
     apts.map{ |apt| apt.}
 
 
