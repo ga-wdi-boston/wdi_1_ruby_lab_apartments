@@ -34,9 +34,9 @@ class Apartment
   def credit_average
     #tenants.map(&:score.credit_score).reduce(0, :+) #0 means it starts adding up from 0.
     #if there're no tenents in the apartments it will return nil as a credit average.
-    #so I added return 'no_credit' if there's no tenant in tenants object.
+    #so I added return -1 if there's no tenant in tenants object.
     #return is stated first because when == false it returns nil which mess ups the method.
-    return 'no_credit_average' if tenants.empty? == true
+    return -1 if tenants.empty? == true
     tenants.map{|score| score.credit_score}.reduce(0){|sum,x| sum + x } / tenants.length if tenants.length > 0
   end
 
@@ -49,8 +49,10 @@ class Apartment
       'good'
     elsif credit_average >= 560
       'medicore'
-    else
+    elsif credit_average < 560 && credit_average != -1
       'bad'
+    elsif credit_average == -1
+      'no tenant'
     end
   end
 

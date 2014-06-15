@@ -11,10 +11,10 @@ puts tenant1.credit_check
 Apartment1 = Apartment.new(417,900,30,3,1)
 
 #test Apartment's class's add tenant
-Apartment1.add_tenant('Tom',25,900)
-Apartment1.add_tenant('Sam',25,700)
-Apartment1.add_tenant('Chris',25,800)
-#Apartment1.add_tenant('Tom',25,900)
+# Apartment1.add_tenant('Tom',25,900)
+# Apartment1.add_tenant('Sam',25,700)
+# Apartment1.add_tenant('Chris',25,800)
+# Apartment1.add_tenant('Tom',25,900)
 
 #test credit score average
 puts 'apartments credit average/credit status'
