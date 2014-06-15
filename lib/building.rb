@@ -40,4 +40,8 @@ class Building
     @apartments.map(&:rent).reduce(0, :+)
   end
 
+  def tenant_list
+    @apartments.map(&:tenants)
+  end
+
 end
