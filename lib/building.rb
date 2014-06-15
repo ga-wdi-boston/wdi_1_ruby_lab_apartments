@@ -47,8 +47,10 @@ class Building
   end
 
   # has a list of tenants, pulled from the tenant lists of all apartments
+  # take the array of tenants and list it by name
   def tenant_list(tenants) #(whoever call this needs to pass the Variable of the Apartment.new.tenants array)
-    apts.map{ |apt| apt.}
+    tenants.select{ |tenant| tenant.name }
+  end
 
 
 binding.pry
