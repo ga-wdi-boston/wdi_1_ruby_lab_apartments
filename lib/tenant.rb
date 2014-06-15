@@ -7,17 +7,33 @@ class Tenant
   end
 
   def credit_check
-    if credit_score >= 760
+
+    # using case
+    case
+    when credit_score >= 760
       'excellent'
-    elsif credit_score >= 725
+    when credit_score >= 725
       'great'
-    elsif credit_score >= 660
+    when credit_score >= 660
       'good'
-    elsif credit_score >= 560
+    when credit_score >= 560
       'medicore'
-    else
+    when credit_score < 560
       'bad'
     end
+
+  #   # using if statement
+  #   if credit_score >= 760
+  #     'excellent'
+  #   elsif credit_score >= 725
+  #     'great'
+  #   elsif credit_score >= 660
+  #     'good'
+  #   elsif credit_score >= 560
+  #     'medicore'
+  #   else
+  #     'bad'
+  #   end
   end
 
 end

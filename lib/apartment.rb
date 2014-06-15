@@ -8,14 +8,14 @@ class Apartment
   def initialize(number,rent,square_footage,bedroom,bathroom)
     @number,@rent,@square_footage = number,rent,square_footage
     @bedroom,@bathroom = bedroom,bathroom
-    @tenants = Array.new(0)
+    @tenants = []
   end
 
   def add_tenant(name,age,credit_score)
     tenant = Tenant.new(name,age,credit_score)
     if tenant.credit_check == 'bad'
       raise "bad credit rating"
-    elsif @tenants.length + 1 > bedroom
+    elsif tenants.length + 1 > bedroom
       raise "Tenants exceed bedroom number"
     end
     @tenants << tenant
@@ -32,7 +32,9 @@ class Apartment
   end
 
   def credit_average
-    tenants.map{|score| score.credit_score}.reduce(0){|sum,x| sum + x } / tenants.length
+    #tenants.map(&:score.credit_score).reduce(0, :+) #0 means it starts adding up from 0.
+    #if there're no tenents in the apartments it will return nil as a credit average.
+    tenants.map{|score| score.credit_score}.reduce(0){|sum,x| sum + x } / tenants.length if tenants.length > 0
   end
 
  def credit_check

@@ -13,10 +13,13 @@ class Building
   end
 
   def delete_apartment(number)
+    #Creates an array(apartment) of arrays(tenants).
     apartment = apartments.select{|apartment| apartment.number == number}
-    if apartment == []
+    if apartment.empty?
       raise "Your apartment doesn't exit!"
+    #Assingd [0] to look in to first array inside the partment array.
     elsif apartment[0].tenants.length != 0
+      puts apartment.inspect
       raise "Someone is living here."
     end
     apartments.delete_if{|apartment| apartment.number == number}
