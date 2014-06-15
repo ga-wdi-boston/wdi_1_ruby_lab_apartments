@@ -9,4 +9,14 @@ puts "My apartment is number #{apartment.number}, it costs #{apartment.rent} per
 
 puts "I am adding a new tenant named #{apartment.add_tenant('tenant')} to my apartment."
 
-puts "#{tenant.credit_rating}"
+# How do I return the array of tenants that I am adding below?
+apartment.add_tenant('John')
+apartment.add_tenant('Jodi')
+apartment.add_tenant('Kim')
+puts apartment.tenants
+puts apartment.tenants[0]
+apartment.remove_tenant(3)
+puts apartment.tenants
+
+
+# puts "#{tenant.credit_rating}"
