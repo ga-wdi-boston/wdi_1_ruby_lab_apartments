@@ -32,9 +32,10 @@ class Apartment
 
   def remove_tenant(name: nil, id: nil, a_tenant: nil)
     deleted = false
-    tenants = tenants.reject do |tenant|
+    @tenants = @tenants.reject do |tenant|
       last_eval = (tenant == a_tenant || tenant.object_id == id || tenant.name == name)
       deleted = last_eval unless deleted
+      tenant == a_tenant || tenant.object_id == id || tenant.name == name
     end
     tenants.freeze
 
@@ -49,10 +50,16 @@ class Apartment
     @tenants = [].freeze
   end
 
-  def average_credit
+  def average_credit_rating
     sum = tenants.map(&:credit_score).reduce(0, &:+)
     Tenant::credit_rating_from_score(sum / (tenants.count))
   end
+
+  def average_credit_score
+    sum = tenants.map(&:credit_score).reduce(0, &:+)
+    sum / (tenants.count)
+  end
+
 
 
 
