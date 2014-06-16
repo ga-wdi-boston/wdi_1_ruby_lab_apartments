@@ -10,9 +10,10 @@
 require_relative '../lib/tenant.rb'
 require_relative '../lib/building.rb'
 
-class Apartment
+class Apartment < Tenant
 
-  attr_accessor :number, :rent, :square_footage, :bedrooms, :bathrooms
+  # Do I need tenants as an accessor, or not because we don't want it directly modifiable?
+  attr_accessor :number, :rent, :square_footage, :bedrooms, :bathrooms, :tenants
 
   def initialize(number, rent, square_footage, bedrooms, bathrooms)
     @number = number
@@ -23,13 +24,51 @@ class Apartment
     @tenants = []
   end
 
+
   def add_tenant(tenant)
+    if tenant.credit_rating == 'bad'
+      raise "Tenant not accepted"
+    elsif tenants == bedrooms
+      raise "Not enough space"
+    else
     @tenants << tenant
   end
 
+# original add_tenant method that I had (when @tenants = [])
+# def add_tenant(tenant)
+#    @tenants = tenant
+# end
+
+#ask about adding multiple tenants at a time with insert
+  #def add_tenant(tenant)
+  #  @tenants.insert(tenant)
+  #end
+
+  def remove_tenant(tenant)
+    @tenants.delete(tenant) or @tenants.delete_at(tenant.to_i)
+  end
+
+  def remove_all_tenants
+    @tenants.clear
+  end
+
+#do I need to use a Hash for tenants in order to access credit_score as key? Not complete
+  def avg_credit_score
+    # need sum of all tenants' credit score / number of tenants
+    sum = @tenants.inject{ |sum, credit_score| sum + credit_score}
+
+  end
+
+# In test file, this pulls in the credit rating calc from the tenant.rb file, but is not raising the warning I want.
+
+
+
 end
 
-#if credit_rating == "bad"
-#    raise "Tenant not accepted"
-#    else
-#      "Tenant accepted"
+
+
+
+
+
+
+
