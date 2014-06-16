@@ -1,5 +1,5 @@
 class Tenant
-
+  attr_reader :name
   attr_accessor :credit_score
 
   def initialize(name:, age:, credit_score: 0)

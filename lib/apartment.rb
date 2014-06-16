@@ -1,6 +1,6 @@
 class Apartment
   attr_reader :bedrooms
-  attr_accessor :tenants
+  attr_accessor :tenants, :number
 
   def initialize (number:, rent:, square_footage:, bedrooms: 1, bathrooms: 0)
     @number, @rent, @square_footage, @bedrooms, @bathrooms, @tenants = number, rent, square_footage, bedrooms, bathrooms, []
@@ -38,14 +38,17 @@ class Apartment
     end
   end
 
-  def remove_a_tenant(removed_tenant)
-    if tenants.include?(removed_tenant)
-      tenants.delete_if { |tenant| removed_tenant == tenant }
-    else
-      raise "That tenant does not exist."
-    end
+  # def remove_a_tenant(name: '', removed_tenant)
 
-  end
+  #   tenants_by_name = tenants.map { |tenant| tenant.name == removed_tenant }
+
+  #   if tenants.include?(removed_tenant) || tenants_by_name.include?(name)
+  #     tenants.delete_if { |tenant| removed_tenant == tenant }
+  #   else
+  #     raise "That tenant does not exist."
+  #   end
+
+  # end
 
 end
 

@@ -1,5 +1,5 @@
 class Building
-  attr_reader :apartments
+  attr_accessor :apartments
 
   def initialize(address:)
     @address = address
@@ -7,6 +7,10 @@ class Building
   end
 
   def new_apartment(apartment)
-    @apartments.push(apartment)
+    apartments.push(apartment)
+  end
+
+  def remove_apartment(apartment_number: 0)
+    @appartments.reject! { |appartment| appartment.number == apartment_number }
   end
 end
