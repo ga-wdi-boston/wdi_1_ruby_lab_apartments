@@ -1,5 +1,5 @@
 class Apartment
-  attr_reader :bedrooms
+  attr_reader :bedrooms, :square_footage
   attr_accessor :tenants, :number
 
   def initialize (number:, rent:, square_footage:, bedrooms: 1, bathrooms: 0)
