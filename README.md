@@ -25,11 +25,14 @@ In this lab we'll be writing a collection of Ruby classes for a real estate app 
 * has an average credit score, calculated from all tenants
 * has a credit rating, calculated from the average credit score using the logic below
 
-### `Tenant`
+<!-- ### `Tenant`
 * has a name, age, and credit score
 * has a credit rating, calculated from the credit score as follows:
   * 760 or higher is "excellent"
   * 725 or higher is "great"
   * 660 or higher is "good"
   * 560 or higher is "mediocre"
-  * anything lower is "bad"
+  * anything lower is "bad" -->
+
+
+  * Create different classes of errors!
