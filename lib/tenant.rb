@@ -8,11 +8,12 @@ class Tenant
   def initialize(first_name:, last_name:, age:, credit_score:)
     @first_name = first_name
     @last_name = last_name
+    @full_name = last_name + ', ' + first_name
     @age = age
     @credit_score = credit_score
   end
 
-  def create_credit_rating(credit_score:) #returns the string in credit_rating
+  def credit_rating#(credit_score:)already have thiss avail #returns the string in credit_rating
     case credit_score
       when credit_score >= 760
         credit_rating = 'Excellent'

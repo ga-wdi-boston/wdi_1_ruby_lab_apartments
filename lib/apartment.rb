@@ -1,5 +1,5 @@
 require 'pry'
-require_relative '..lib/tenant.rb'
+require_relative '../lib/tenant.rb'
 
 class Apartment < Tenant
 
@@ -17,16 +17,20 @@ class Apartment < Tenant
     @individual_tenants = []
   end
 
-  def tenant_error(credit_score:, num_bedrooms:)
-    raise "Warning! Shitty tenant. Do not offer a lease."
-    raise "Warning! There are not enough bedrooms. Do not offer lease."
+  # def tenant_error(credit_score:, num_bedrooms:)
+  #   raise "Warning! Shitty tenant. Do not offer a lease."
+  #   raise "Warning! There are not enough bedrooms. Do not offer lease."
 
-  rescue
-  end
+  # rescue
+  # end
 
-  def evict_all #can't test until i have an array of tenants
-    if its not empty or eviction
-    individual_tenants.map.delete
+  # def evict_all #can't test until i have an array of tenants
+  #   if its not empty or eviction
+  #   individual_tenants.map.delete
+  # end
+
+  def indiv_eviction
+    individual_tenants.index(full_name).delete!#full_name comes from tenant parent class
   end
 
   def avg_credit
