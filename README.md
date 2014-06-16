@@ -33,3 +33,10 @@ In this lab we'll be writing a collection of Ruby classes for a real estate app 
   * 660 or higher is "good"
   * 560 or higher is "mediocre"
   * anything lower is "bad"
+
+
+to raise an error:
+
+raise "here's my error" # raises a runtime error
+
+bonus- figure out how to create and raise your own classes-

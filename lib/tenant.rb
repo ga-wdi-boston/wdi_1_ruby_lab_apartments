@@ -8,8 +8,10 @@
 
 class Tenant
 
-  def initialize(name: name, age: age, credit_score: credit_score)
-    @name, @age, @credit_score = age, name, credit_score
+  attr_reader :name, :credit_score
+
+  def initialize(name:, age:, credit_score:)
+    @name, @age, @credit_score = name, age, credit_score
   end
 
   def credit_rating

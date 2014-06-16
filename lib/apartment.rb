@@ -12,7 +12,7 @@
 
 class Apartment
 
-  attr_reader :number, :rent, :square_footage, :bedrooms, :bathrooms
+  attr_reader :number, :rent, :square_footage, :bedrooms, :bathrooms, :tenants
 
   def initialize (number:, rent:, square_footage:, bedrooms:, bathrooms:)
     @number, @rent, @square_footage, @bedrooms, @bathrooms = number, rent, square_footage, bedrooms, bathrooms

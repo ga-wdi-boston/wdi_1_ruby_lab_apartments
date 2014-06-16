@@ -13,4 +13,4 @@ home.add_tenant(paul)
 
 puts home.average_credit_score
 puts home.average_credit_rating
-# binding.pry
+binding.pry

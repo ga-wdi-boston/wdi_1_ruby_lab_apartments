@@ -10,8 +10,6 @@
 
 class Building
 
-  attr_reader :apartments
-
   def initialize(address)
     @address = address
     @apartments = []
@@ -26,7 +24,7 @@ class Building
       raise "No apartment with that number found"
     elsif !(@apartments.reject! { |apartment| (apt_number == apartment.number && apartment.tenants.length != 0) } )
       puts "That apartment still has tenants.  Are you sure you want to remove it? y/n"
-      if gets[0] == "y"
+      if gets[0].casecmp("y") == 0
         @apartments.reject! { |apartment| apt_number == apartment.number }
       end
     end
@@ -42,6 +40,10 @@ class Building
 
   def tenant_list
     @apartments.map(&:tenants)
+  end
+
+  def by_credit_rating
+    @apartments.sort_by(&:average_credit_score).reverse.group_by(&:average_credit_rating)
   end
 
 end
