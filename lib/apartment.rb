@@ -60,7 +60,4 @@ class Apartment
     sum / (tenants.count)
   end
 
-
-
-
 end
