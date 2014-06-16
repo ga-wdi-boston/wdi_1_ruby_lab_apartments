@@ -39,7 +39,12 @@ class Apartment
   end
 
   def remove_a_tenant(removed_tenant)
-    tenants.delete_if { |tenant| tenant == removed_tenant }
+    if tenants.include?(removed_tenant)
+      tenants.delete_if { |tenant| removed_tenant == tenant }
+    else
+      raise "That tenant does not exist."
+    end
+
   end
 
 end
