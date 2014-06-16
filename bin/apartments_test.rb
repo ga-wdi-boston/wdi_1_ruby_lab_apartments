@@ -23,4 +23,6 @@ excellent = Tenant.new(name: 'So Great', age: 45, credit_score: 790)
 purple_house.new_tenant(myself)
 purple_house.new_tenant(excellent)
 
+purple_house.remove_a_tenant(excellent)
+
 binding.pry

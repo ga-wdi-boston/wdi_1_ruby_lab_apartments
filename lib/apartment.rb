@@ -36,13 +36,11 @@ class Apartment
     else
        'bad'
     end
+  end
+
+  def remove_a_tenant(removed_tenant)
+    tenants.delete_if { |tenant| tenant == removed_tenant }
+  end
 
 end
 
-  # def remove_a_tenant(tenant, name: '')
-  #   if tenants.include?(tenant)
-  #     tenants.delete(tenant)
-  #   elsif tenants
-  # end
-
-end
